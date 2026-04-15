@@ -17,7 +17,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o server .
 # Create a minimal runtime image
 FROM alpine:latest
 
-WORKDIR /root/
+WORKDIR /root
 
 # Copy binary from builder
 COPY --from=builder /app/server .
