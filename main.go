@@ -8,7 +8,7 @@ import (
 	"os"
 	"os/signal"
 	"time"
-
+)
 
 func main() {
 	log.Println("Starting setup... (simulating 10s delay)")
@@ -29,7 +29,7 @@ func main() {
 	})
 
 	server := &http.Server{
-		Addr:    ":8080",
+		Addr:    ":8081",
 		Handler: mux,
 	}
 
