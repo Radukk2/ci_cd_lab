@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copy Go module files and download dependencies
 COPY go.mod go.sum ./
-RUN go mod download
+RUN go download
 
 # Copy the source code
 COPY . .
@@ -17,7 +17,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -o server .
 # Create a minimal runtime image
 FROM alpine:latest
 
-WORKDIR /root
+WORKDIR /root/
 
 # Copy binary from builder
 COPY --from=builder /app/server .
